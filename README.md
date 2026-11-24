@@ -4,7 +4,7 @@
 
 Hi, I'm Nick.
 
-I spend my days on nature reserves in South Lakeland, Cumbria. Working with some lovely people, looking after rare and endangered species (**dormice, red squirrels, ospreys**) and managing the habitats they live in.
+I spend my days on nature reserves in South Lakeland, Cumbria, working with some lovely people, looking after rare and endangered species (**dormice, red squirrels, ospreys**) and managing the habitats they live in.
 
 In the evenings I learn about, tinker with, and build technical things that make that work easier.
 
