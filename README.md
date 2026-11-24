@@ -1,4 +1,4 @@
-<img alt="LiDAR relief of a Cumbrian nature reserve with a small radio sensor network" src="banner.svg" width="100%">
+<a href="https://www.canopysensors.co.uk/"><img alt="LiDAR relief of a Cumbrian nature reserve with a small radio sensor network" src="banner.svg" width="100%"></a>
 
 <br>
 
@@ -12,7 +12,7 @@ In the evenings I learn about, tinker with, and build technical things that make
 
 <br>
 
-<img alt="Out in the field" src="header-field.svg" width="100%">
+<a href="https://github.com/nickjsykes?tab=repositories"><img alt="Out in the field" src="header-field.svg" width="100%"></a>
 
 <table>
 <tr>
@@ -33,7 +33,7 @@ In the evenings I learn about, tinker with, and build technical things that make
 </tr>
 </table>
 
-<img alt="On the bench" src="header-bench.svg" width="100%">
+<a href="https://github.com/nickjsykes?tab=repositories"><img alt="On the bench" src="header-bench.svg" width="100%"></a>
 
 - **[Canopy](https://www.canopysensors.co.uk/)**: Low cost LoRa sensors for traps, feeders & nest security.
 - **Warden**: Early warning for nature reserves: planning, felling, permits and satellite change, turned into one weekly brief with a deadline on every line.

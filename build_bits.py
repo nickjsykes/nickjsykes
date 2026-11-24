@@ -16,15 +16,25 @@ DEEP, TEAL, SAND, BONE, ACCENT = "#123f47", "#3d7d84", "#c5a46c", "#f1e8d2", "#e
 T = 240                                   # thumbnail px (shown at 120, sharp on retina)
 
 
-def header(title, out):
+def lidar_slice(slug, box, w, h):
+    """A thin strip of a render, fading to deep teal on the left so the title reads."""
+    import base64, io
+    import numpy as np
+    im = Image.open(HERE / "src" / f"{slug}_full.png").convert("RGB").crop(box)
+    im = im.resize((w * 2, h * 2), Image.Resampling.LANCZOS)
+    a = np.clip(0.95 - np.linspace(0, 1.1, w * 2), 0.18, 0.88)
+    mask = Image.fromarray((np.tile(a[None, :], (h * 2, 1)) * 255).astype(np.uint8))
+    im = Image.composite(Image.new("RGB", im.size, DEEP), im, mask)
+    buf = io.BytesIO()
+    im.save(buf, "JPEG", quality=80, optimize=True)
+    return base64.b64encode(buf.getvalue()).decode()
+
+
+def header(title, out, slug, box):
     w, h = 1200, 56
-    # two faint contour lines running through the strip, like an OS map edge
-    c1 = "M0,40 C150,30 260,46 420,36 S700,22 860,34 S1080,46 1200,30"
-    c2 = "M0,48 C180,40 300,54 470,44 S760,32 900,42 S1100,52 1200,40"
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-label="{title}">
-<rect width="{w}" height="{h}" rx="10" fill="{DEEP}"/>
-<path d="{c1}" stroke="{TEAL}" stroke-width="1.2" fill="none" opacity="0.7"/>
-<path d="{c2}" stroke="{SAND}" stroke-width="1" fill="none" opacity="0.35"/>
+<defs><clipPath id="c"><rect width="{w}" height="{h}" rx="10"/></clipPath></defs>
+<g clip-path="url(#c)"><image width="{w}" height="{h}" href="data:image/jpeg;base64,{lidar_slice(slug, box, w, h)}"/></g>
 <rect x="24" y="25" width="22" height="4" rx="2" fill="{ACCENT}"/>
 <text x="58" y="34" font-family="'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="17"
       font-weight="600" letter-spacing="3" fill="{BONE}">{title.upper()}</text>
@@ -60,8 +70,8 @@ def from_render(slug, box, marker):
 
 
 def main(shots):
-    header("Out in the field", "header-field.svg")
-    header("On the bench", "header-bench.svg")
+    header("Out in the field", "header-field.svg", "duddon_mosses", (0, 1400, 3006, 1540))
+    header("On the bench", "header-bench.svg", "north_walney", (0, 1600, 4023, 1788))
     out = HERE / "thumbs"
     out.mkdir(exist_ok=True)
     from_shot(shots / "fieldnotes_plain.png", (100, 1092, 900)).save(out / "fieldnotes.png", optimize=True)
