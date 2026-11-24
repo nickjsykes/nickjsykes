@@ -29,7 +29,7 @@ In the evenings I learn about, tinker with, and build technical things that make
 </tr>
 <tr>
 <td><a href="https://nickjsykes.github.io/canopy-ranger/"><img src="thumbs/ranger.png" width="96" alt="Canopy Ranger"></a></td>
-<td><b><a href="https://nickjsykes.github.io/canopy-ranger/">Canopy Ranger</a></b><br>Diagnostic tool for Canopy network.</td>
+<td><b><a href="https://nickjsykes.github.io/canopy-ranger/">Canopy Ranger</a></b><br>Tells you on the spot whether a sensor will reach the network, before you fit it.</td>
 </tr>
 </table>
 
@@ -52,6 +52,6 @@ In the evenings I learn about, tinker with, and build technical things that make
 
 <br>
 
-I build these with AI coding assistants. I am not a professional developer.
+I build these with AI coding assistants. The field knowledge, design and testing come from time on the reserves; I am not a professional developer.
 
 <sub>LiDAR: Environment Agency 1 m DTM, © Environment Agency, Open Government Licence v3.</sub>
