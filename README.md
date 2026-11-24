@@ -7,7 +7,7 @@
 
 Hi, I'm Nick.
 
-I spend my days on nature reserves with some lovely people, looking after rare and endangered species (dormice, red squirrels, ospreys) and managing the habitats they live in.
+I spend my days on nature reserves in South Lakeland, Cumbria, with some lovely people, looking after rare and endangered species (dormice, red squirrels, ospreys) and managing the habitats they live in.
 
 In the evenings I learn, tinker, and build technical things that make that work easier.
 
@@ -24,7 +24,7 @@ Dry stone waller, reserves ranger, day dreamer and that guy who brings a laptop 
 
 ### On the bench
 
-- **Canopy**: LoRa sensor network.
+- **[Canopy](https://www.canopysensors.co.uk/)**: Low cost LoRa sensors for traps, feeders & nest security.
 - **Warden**: Early warning for nature reserves: planning, felling, permits and satellite change, turned into one weekly brief with a deadline on every line.
 - **MothCam**: A Mothbox-style moth camera trap, building and testing with AMI.
 
