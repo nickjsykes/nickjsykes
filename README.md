@@ -7,9 +7,11 @@
 
 Hi, I'm Nick.
 
-I spend my days on nature reserves with some lovely people, looking after rare and endangered species: dormice, red squirrels, ospreys and the habitats they live in. In the evenings I tinker, and build technical things that make that work easier.
+I spend my days on nature reserves with some lovely people, looking after rare and endangered species (dormice, red squirrels, ospreys) and managing the habitats they live in.
 
-Dry stone waller, chainsaw ticket, Reserve Ranger, and the one who brings a laptop to the bog.
+In the evenings I learn, tinker, and build technical things that make that work easier.
+
+Dry stone waller, reserves ranger, day dreamer and that guy who brings a laptop to the bog.
 
 Everything here was built because somebody needed it in the field: in gloves, in the rain, with
 no signal.
