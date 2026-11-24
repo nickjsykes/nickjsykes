@@ -31,4 +31,6 @@ no signal.
 - **Warden**: Early warning for nature reserves: planning, felling, permits and satellite change, turned into one weekly brief with a deadline on every line.
 - **MothCam**: A Mothbox-style moth camera trap, building and testing with AMI.
 
+I build these with AI coding assistants. I am not a professional developer.
+
 <sub>Banner: Environment Agency 1 m LiDAR, © Environment Agency, Open Government Licence v3.</sub>

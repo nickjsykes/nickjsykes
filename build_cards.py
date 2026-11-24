@@ -16,14 +16,16 @@ CW, CH = 1280, 640
 FONT_B = r"C:\Windows\Fonts\segoeuib.ttf"
 FONT_R = r"C:\Windows\Fonts\segoeui.ttf"
 CARDS = [
-    ("fieldnotes", "Field Notes", "Pocket map and notebook for rangers.", "fieldnotes_1.png"),
-    ("boxcheck", "Box Check", "Offline phone app for nest box checks.", "boxcheck_3.png"),
-    ("canopy-ranger", "Canopy Ranger", "Check the radio link before you fit the sensor.", "ranger_1.png"),
+    # slug, name, line, screenshot, LiDAR window SW corner (BNG): a different landscape for each
+    ("fieldnotes", "Field Notes", "Pocket map and notebook for rangers.", "fieldnotes_1.png", (321300, 487000)),  # mossland
+    ("boxcheck", "Box Check", "Offline phone app for nest box checks.", "boxcheck_3.png", (347200, 475600)),      # limestone
+    ("canopy-ranger", "Canopy Ranger", "Check the radio link before you fit the sensor.", "ranger_1.png", (317200, 472900)),  # dunes
 ]
 
 
-def background():
-    bb.X0, bb.Y0, bb.WM, bb.HM = 332600, 481250, 1300, 650      # 2:1 strip over the ridges and the moss
+def background(sw):
+    bb.X0, bb.Y0 = sw
+    bb.WM, bb.HM = 1300, 650                                     # 2:1, like the card
     z = bb.load()
     v = bb.shade(z)
     v = (v - np.percentile(v, 2)) / (np.percentile(v, 99.8) - np.percentile(v, 2))
@@ -49,10 +51,9 @@ def phone(shot_path, h=560):
 def main(shots):
     out = Path(__file__).parent / "cards"
     out.mkdir(exist_ok=True)
-    bg = background()
     fb, fr, fs = ImageFont.truetype(FONT_B, 76), ImageFont.truetype(FONT_R, 34), ImageFont.truetype(FONT_R, 24)
-    for slug, name, line, shot in CARDS:
-        card = bg.copy()
+    for slug, name, line, shot, sw in CARDS:
+        card = background(sw)
         p, m = phone(shots / shot)
         px, py = CW - p.width - 90, (CH - p.height) // 2
         glow = Image.new("L", (CW, CH), 0)
