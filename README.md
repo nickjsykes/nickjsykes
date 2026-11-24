@@ -1,10 +1,10 @@
-<a href="https://www.canopysensors.co.uk/"><img alt="LiDAR relief of a Cumbrian nature reserve with a small radio sensor network" src="banner.svg" width="100%"></a>
+<picture><img alt="LiDAR relief of a Cumbrian nature reserve with a small radio sensor network" src="banner.svg" width="100%"></picture>
 
 <br>
 
 Hi, I'm Nick.
 
-I spend my days on nature reserves in South Lakeland, Cumbria, with some lovely people, looking after rare and endangered species (**dormice, red squirrels, ospreys**) and managing the habitats they live in.
+I spend my days on nature reserves in South Lakeland, Cumbria. Working with some lovely people, looking after rare and endangered species (**dormice, red squirrels, ospreys**) and managing the habitats they live in.
 
 In the evenings I learn about, tinker with, and build technical things that make that work easier.
 
@@ -12,7 +12,7 @@ In the evenings I learn about, tinker with, and build technical things that make
 
 <br>
 
-<a href="https://github.com/nickjsykes?tab=repositories"><img alt="Out in the field" src="header-field.svg" width="100%"></a>
+<picture><img alt="Out in the field" src="header-field.svg" width="100%"></picture>
 
 <table>
 <tr>
@@ -25,7 +25,7 @@ In the evenings I learn about, tinker with, and build technical things that make
 </tr>
 <tr>
 <td><a href="https://github.com/nickjsykes/threat-detector"><img src="thumbs/threat-detector.png" width="96" alt="Threat Detector"></a></td>
-<td><b><a href="https://github.com/nickjsykes/threat-detector">Threat Detector</a></b><br>Screens every week's planning applications against ancient woodland and the Ancient Tree Inventory, automatically.</td>
+<td><b><a href="https://github.com/nickjsykes/threat-detector">Threat Detector</a></b><br>Screens every week's planning applications against ancient woodland and the Ancient Tree Inventory, automatically. <b>2,245 applications screened, 20 threats found.</b></td>
 </tr>
 <tr>
 <td><a href="https://nickjsykes.github.io/canopy-ranger/"><img src="thumbs/ranger.png" width="96" alt="Canopy Ranger"></a></td>
@@ -33,7 +33,7 @@ In the evenings I learn about, tinker with, and build technical things that make
 </tr>
 </table>
 
-<a href="https://github.com/nickjsykes?tab=repositories"><img alt="On the bench" src="header-bench.svg" width="100%"></a>
+<picture><img alt="On the bench" src="header-bench.svg" width="100%"></picture>
 
 <table>
 <tr>
@@ -41,12 +41,12 @@ In the evenings I learn about, tinker with, and build technical things that make
 <td><b><a href="https://www.canopysensors.co.uk/">Canopy</a></b><br>Low cost LoRa sensors for traps, feeders & nest security.</td>
 </tr>
 <tr>
-<td><a href="https://github.com/nickjsykes"><img src="icons/warden.svg" width="96" alt="Warden"></a></td>
-<td><b>Warden</b><br>Early warning for nature reserves: planning, felling, permits and satellite change, turned into one weekly brief with a deadline on every line.</td>
+<td><picture><img src="icons/warden.svg" width="96" alt="Warden"></picture></td>
+<td><b>Warden</b> <sub>· in progress</sub><br>Early warning for nature reserves: planning, felling, permits and satellite change, turned into one weekly brief with a deadline on every line.</td>
 </tr>
 <tr>
-<td><a href="https://github.com/nickjsykes"><img src="icons/mothcam.svg" width="96" alt="MothCam"></a></td>
-<td><b>MothCam</b><br>A Mothbox-style moth camera trap, building and testing with AMI.</td>
+<td><picture><img src="icons/mothcam.svg" width="96" alt="MothCam"></picture></td>
+<td><b>MothCam</b> <sub>· in progress</sub><br>A Mothbox-style moth camera trap, building and testing with AMI.</td>
 </tr>
 </table>
 
