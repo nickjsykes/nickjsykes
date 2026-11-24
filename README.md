@@ -13,16 +13,13 @@ In the evenings I learn, tinker, and build technical things that make that work 
 
 Dry stone waller, reserves ranger, day dreamer and that guy who brings a laptop to the bog.
 
-Everything here was built because somebody needed it in the field: in gloves, in the rain, with
-no signal.
-
 ### Out in the field
 
 | | |
 |---|---|
 | **[Field Notes](https://nickjsykes.github.io/gridref/)** | Pocket map and notebook for rangers. Grid refs, conversions, offline maps and sharing. |
 | **[Box Check](https://nickjsykes.github.io/boxcheck/)** | Scientific quick capture recorder. Big buttons, easy flow. |
-| **Threat Detector** | Screens every week's planning applications against ancient woodland and the Ancient Tree Inventory, automatically. |
+| **[Threat Detector](https://github.com/nickjsykes/threat-detector)** | Screens every week's planning applications against ancient woodland and the Ancient Tree Inventory, automatically. |
 | **[Canopy Ranger](https://nickjsykes.github.io/canopy-ranger/)** | Diagnostic tool for Canopy network. |
 
 ### On the bench
