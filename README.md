@@ -21,7 +21,7 @@ In the evenings I learn about, tinker with, and build technical things that make
 </tr>
 <tr>
 <td><a href="https://nickjsykes.github.io/boxcheck/"><img src="thumbs/boxcheck.png" width="96" alt="Box Check"></a></td>
-<td><b><a href="https://nickjsykes.github.io/boxcheck/">Box Check</a></b><br>Scientific quick capture recorder. Big buttons, easy flow.</td>
+<td><b><a href="https://nickjsykes.github.io/boxcheck/">Box Check</a></b><br>Offline phone app for nest box checks. Big buttons, intuitive flow.</td>
 </tr>
 <tr>
 <td><a href="https://github.com/nickjsykes/threat-detector"><img src="thumbs/threat-detector.png" width="96" alt="Threat Detector"></a></td>
