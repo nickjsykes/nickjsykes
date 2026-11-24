@@ -1,7 +1,4 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="banner-dark.svg">
-  <img alt="LiDAR relief of a Cumbrian nature reserve with a small radio sensor network" src="banner-light.svg" width="100%">
-</picture>
+<img alt="LiDAR relief of a Cumbrian nature reserve with a small radio sensor network" src="banner.svg" width="100%">
 
 <br>
 

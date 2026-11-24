@@ -1,7 +1,8 @@
-"""Social preview cards (1280x640) for the public repos: dark LiDAR of Roudsea, app name, one line, a phone.
+"""Social preview cards (1280x640) for the public repos, on Nick's own LiDAR renders.
 
 Upload each by hand: repo -> Settings -> General -> Social preview -> Edit -> Upload an image.
-    C:/Dev/Terra/.venv/Scripts/python.exe build_cards.py <screenshot folder>
+    python build_cards.py <screenshot folder>
+Contains Environment Agency data (c) Environment Agency, Open Government Licence v3.
 """
 import sys
 from pathlib import Path
@@ -9,34 +10,30 @@ from pathlib import Path
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
-sys.path.insert(0, str(Path(__file__).parent))
-import build_banner as bb  # noqa: E402
-
+HERE = Path(__file__).parent
+Image.MAX_IMAGE_PIXELS = None
 CW, CH = 1280, 640
 FONT_B = r"C:\Windows\Fonts\segoeuib.ttf"
 FONT_R = r"C:\Windows\Fonts\segoeui.ttf"
+DEEP = (10, 38, 44)          # palette from the renders
+BONE = (241, 232, 210)
+SAND = (214, 190, 146)
+ACCENT = (232, 96, 60)
+
+# slug, name, line, screenshot (or None), render, crop box in the render
 CARDS = [
-    # slug, name, line, screenshot, LiDAR window SW corner (BNG): a different landscape for each
-    ("fieldnotes", "Field Notes", "Pocket map and notebook for rangers.", "fieldnotes_1.png", (321300, 487000)),  # mossland
-    ("boxcheck", "Box Check", "Offline phone app for nest box checks.", "boxcheck_3.png", (347200, 475600)),      # limestone
-    ("canopy-ranger", "Canopy Ranger", "Check the radio link before you fit the sensor.", "ranger_1.png", (317200, 472900)),  # dunes
+    ("fieldnotes", "Field Notes", "Pocket map and notebook for rangers.", "fieldnotes_1.png", "duddon_mosses", (0, 1000, 3006, 2503)),
+    ("boxcheck", "Box Check", "Offline phone app for nest box checks.", "boxcheck_3.png", "roudsea", (400, 450, 2400, 1450)),
+    ("canopy-ranger", "Canopy Ranger", "Check the radio link before you fit the sensor.", "ranger_1.png", "north_walney", (0, 1000, 4023, 3011)),
+    ("threat-detector", "Threat Detector", "Every week's planning applications,\nscreened against ancient woodland.", None, "gait_barrows", (0, 900, 2014, 1907)),
 ]
 
 
-def background(sw):
-    bb.X0, bb.Y0 = sw
-    bb.WM, bb.HM = 1300, 650                                     # 2:1, like the card
-    z = bb.load()
-    v = bb.shade(z)
-    v = (v - np.percentile(v, 2)) / (np.percentile(v, 99.8) - np.percentile(v, 2))
-    lo, hi = np.array(bb.THEMES["dark"]["lo"]), np.array(bb.THEMES["dark"]["hi"])
-    rgb = (lo + np.clip(v, 0, 1)[..., None] * (hi - lo)).astype(np.uint8)
-    im = Image.fromarray(rgb).resize((CW, CH), Image.Resampling.LANCZOS)
-    shade = Image.new("L", (CW, CH))                              # darken the left so text reads
-    ImageDraw.Draw(shade).rectangle((0, 0, CW, CH), fill=0)
-    grad = np.tile(np.clip(1.0 - np.linspace(0, 1.4, CW), 0.15, 1.0)[None, :], (CH, 1))
-    dark = Image.new("RGB", (CW, CH), (6, 9, 14))
-    return Image.composite(dark, im, Image.fromarray((grad * 200).astype(np.uint8)))
+def background(render, box):
+    im = Image.open(HERE / "src" / f"{render}_full.png").convert("RGB").crop(box).resize((CW, CH), Image.Resampling.LANCZOS)
+    a = np.clip(1.15 - np.linspace(0, 1.5, CW), 0.12, 0.92)        # deep teal wash, strongest behind the text
+    mask = Image.fromarray((np.tile(a[None, :], (CH, 1)) * 255).astype(np.uint8))
+    return Image.composite(Image.new("RGB", (CW, CH), DEEP), im, mask)
 
 
 def phone(shot_path, h=560):
@@ -49,26 +46,28 @@ def phone(shot_path, h=560):
 
 
 def main(shots):
-    out = Path(__file__).parent / "cards"
+    out = HERE / "cards"
     out.mkdir(exist_ok=True)
     fb, fr, fs = ImageFont.truetype(FONT_B, 76), ImageFont.truetype(FONT_R, 34), ImageFont.truetype(FONT_R, 24)
-    for slug, name, line, shot, sw in CARDS:
-        card = background(sw)
-        p, m = phone(shots / shot)
-        px, py = CW - p.width - 90, (CH - p.height) // 2
-        glow = Image.new("L", (CW, CH), 0)
-        ImageDraw.Draw(glow).rounded_rectangle((px - 6, py - 6, px + p.width + 6, py + p.height + 6), 40, fill=150)
-        card.paste((90, 162, 255), (0, 0), glow.filter(ImageFilter.GaussianBlur(18)).point(lambda v: v // 3))
-        frame = Image.new("L", (p.width + 12, p.height + 12), 0)
-        ImageDraw.Draw(frame).rounded_rectangle((0, 0, p.width + 11, p.height + 11), 40, fill=255)
-        card.paste((24, 28, 34), (px - 6, py - 6), frame)
-        card.paste(p, (px, py), m)
+    for slug, name, line, shot, render, box in CARDS:
+        card = background(render, box)
+        if shot:
+            p, m = phone(shots / shot)
+            px, py = CW - p.width - 90, (CH - p.height) // 2
+            shadow = Image.new("L", (CW, CH), 0)
+            ImageDraw.Draw(shadow).rounded_rectangle((px - 4, py + 10, px + p.width + 4, py + p.height + 18), 40, fill=170)
+            card.paste(DEEP, (0, 0), shadow.filter(ImageFilter.GaussianBlur(16)))
+            frame = Image.new("L", (p.width + 12, p.height + 12), 0)
+            ImageDraw.Draw(frame).rounded_rectangle((0, 0, p.width + 11, p.height + 11), 40, fill=255)
+            card.paste((18, 22, 26), (px - 6, py - 6), frame)
+            card.paste(p, (px, py), m)
         d = ImageDraw.Draw(card)
-        d.text((80, 220), name, font=fb, fill=(236, 240, 243))
-        d.text((84, 318), line, font=fr, fill=(176, 188, 182))
-        d.text((84, 560), "github.com/nickjsykes", font=fs, fill=(120, 132, 128))
-        card.save(out / f"{slug}.png", optimize=True)
-        print(out / f"{slug}.png")
+        d.rectangle((84, 196, 84 + 56, 202), fill=ACCENT)           # small accent rule above the name
+        d.text((80, 214), name, font=fb, fill=BONE)
+        d.multiline_text((84, 312), line, font=fr, fill=SAND, spacing=10)
+        d.text((84, 560), "github.com/nickjsykes", font=fs, fill=(150, 170, 165))
+        card.save(out / f"{slug}.jpg", quality=90, optimize=True, progressive=True)
+        print(out / f"{slug}.jpg", (out / f"{slug}.jpg").stat().st_size // 1024, "KB")
 
 
 if __name__ == "__main__":
