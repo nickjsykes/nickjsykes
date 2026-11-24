@@ -3,23 +3,25 @@
   <img alt="LiDAR relief of a Cumbrian nature reserve with a small radio sensor network" src="banner-light.svg" width="100%">
 </picture>
 
+<br>
+
 Hi, I'm Nick.
 
-I spend my days out on nature reserves with some lovely people and my evenings building things that make that work
-easier. Dry stone waller, Reserve Ranger, the one who brings a laptop
-to the bog.
+I spend my days on nature reserves with some lovely people, looking after rare and endangered species: dormice, red squirrels, ospreys and the habitats they live in. In the evenings I tinker, and build technical things that make that work easier.
+
+Dry stone waller, chainsaw ticket, Reserve Ranger, and the one who brings a laptop to the bog.
 
 Everything here was built because somebody needed it in the field: in gloves, in the rain, with
 no signal.
 
 ### Out in the field
 
-| | | |
-|---|---|---|
-| 🗺 | **[Field Notes](https://nickjsykes.github.io/gridref/)** | Pocket map and notebook for rangers. Grid refs, conversions, offline maps and sharing. |
-| 🐭 | **[Box Check](https://nickjsykes.github.io/boxcheck/)** | Scientific quick capture recorder. Big buttons, easy flow. |
-| 🌲 | **Threat Detector** | Screens every week's planning applications against ancient woodland and the Ancient Tree Inventory, automatically. |
-| 📡 | **[Canopy Ranger](https://nickjsykes.github.io/canopy-ranger/)** | Diagnostic tool for Canopy network. |
+| | |
+|---|---|
+| **[Field Notes](https://nickjsykes.github.io/gridref/)** | Pocket map and notebook for rangers. Grid refs, conversions, offline maps and sharing. |
+| **[Box Check](https://nickjsykes.github.io/boxcheck/)** | Scientific quick capture recorder. Big buttons, easy flow. |
+| **Threat Detector** | Screens every week's planning applications against ancient woodland and the Ancient Tree Inventory, automatically. |
+| **[Canopy Ranger](https://nickjsykes.github.io/canopy-ranger/)** | Diagnostic tool for Canopy network. |
 
 ### On the bench
 
