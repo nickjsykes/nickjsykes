@@ -9,9 +9,9 @@ Hi, I'm Nick.
 
 I spend my days on nature reserves in South Lakeland, Cumbria, with some lovely people, looking after rare and endangered species (dormice, red squirrels, ospreys) and managing the habitats they live in.
 
-In the evenings I learn, tinker, and build technical things that make that work easier.
+In the evenings I learn about, tinker with, and build technical things that make that work easier.
 
-Dry stone waller, reserves ranger, day dreamer and that guy who brings a laptop to the bog.
+Dry stone waller, reserves ranger, map nerd, and that guy who brings a laptop to the bog.
 
 ### Out in the field
 
