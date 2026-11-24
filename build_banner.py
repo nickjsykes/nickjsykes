@@ -26,9 +26,11 @@ W, H = 1200, 300                   # banner size in px
 SCALE = 2                          # raster rendered at 2x for sharp screens
 CONTOUR_M = 5
 
+# Colours taken from the profile photo (a bog in autumn): peat shadows, moss and gold grass,
+# and the rust-red tussock for the radio, so banner and avatar look like one place.
 THEMES = {
-    "light": dict(lo=(150, 132, 104), hi=(252, 248, 238), line="#9a6534", radio="#2f6fb5", ring="#2f6fb5"),
-    "dark": dict(lo=(6, 9, 14), hi=(96, 104, 110), line="#a57a4f", radio="#5aa2ff", ring="#5aa2ff"),
+    "light": dict(lo=(112, 100, 66), hi=(244, 238, 220), line="#7a6a3e", radio="#b4472a", ring="#b4472a"),
+    "dark": dict(lo=(14, 13, 8), hi=(140, 128, 92), line="#9a7f52", radio="#e0703f", ring="#e0703f"),
 }
 
 # Radio network in px on the banner. Gateway on the limestone ridge; nodes are illustrative only.
