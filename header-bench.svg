@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="56" viewBox="0 0 1200 56" role="img" aria-label="On the bench">
+<rect width="1200" height="56" rx="10" fill="#123f47"/>
+<path d="M0,40 C150,30 260,46 420,36 S700,22 860,34 S1080,46 1200,30" stroke="#3d7d84" stroke-width="1.2" fill="none" opacity="0.7"/>
+<path d="M0,48 C180,40 300,54 470,44 S760,32 900,42 S1100,52 1200,40" stroke="#c5a46c" stroke-width="1" fill="none" opacity="0.35"/>
+<rect x="24" y="25" width="22" height="4" rx="2" fill="#e8603c"/>
+<text x="58" y="34" font-family="'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="17"
+      font-weight="600" letter-spacing="3" fill="#f1e8d2">ON THE BENCH</text>
+</svg>
